@@ -212,11 +212,11 @@
                         var urlProxy = $SH.baseUrl + "/portal/proxy?url=" + encodeURIComponent(countUrl)
                         // Status code returned via proxy is wrapped into response body in normal situation
                         return $http.get(urlProxy, $scope._httpDescription('biocollectCounts')).then(function (response) {
-                            if (response.data.statusCode == 200 ) {
+                            if (response.data.statusCode == 200) {
                                 return {count: response.data.hits.total, link: linkUrl, linkName: 'list', name: name}
                             } else {
                                 console.log("Failed to get data from Biocollect: " + countUrl)
-                                console.log (response.data)
+                                console.log(response.data)
                             }
                         });
                     } else {
@@ -373,7 +373,7 @@
                         });
 
                         $.each(['Algae', 'Amphibians', 'Angiosperms', 'Animals', 'Arthropods', 'Bacteria', 'Birds',
-                            'Bryophytes', 'Chromista', 'Crustaceans', 'Dicots', 'FernsAndAllies', 'Fish', 'Fungi',
+                            'Bryophytes', 'Chromista', 'Crustaceans', 'Dicots', 'FernsAndAllies', 'Fishes', 'Fungi',
                             'Gymnosperms', 'Insects', 'Mammals', 'Molluscs', 'Monocots', 'Plants', 'Protozoa', 'Reptiles'], function (i, v) {
                             $scope.items.push({
                                 name: v,
@@ -406,7 +406,7 @@
                     });
                 };
 
-                $scope.countNextItem = function(items, index) {
+                $scope.countNextItem = function (items, index) {
                     if (index < items.length) {
                         if (items[index].query !== undefined) {
                             items[index].value = '';
