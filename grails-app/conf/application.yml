@@ -368,8 +368,8 @@ startup:
 
 defaultareas:
     - name: 'Australia'
-      fqs: ['longitude:[112 TO 154]', 'latitude:[-44 TO -9]']
-      wkt: 'POLYGON((112.0 -44.0,154.0 -44.0,154.0 -9.0,112.0 -9.0,112.0 -44.0))'
+      fqs: ["cl966:*"]
+      wkt: ''
       areaSqKm: 16322156.76
       bbox: [112, -44, 154, -9]
     - name: 'World'
