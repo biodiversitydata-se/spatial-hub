@@ -132,7 +132,7 @@ admin_role: ROLE_ADMIN
 
 skin.orgNameLong: "Swedish Biodiversity Data Infrastructure"
 skin.orgNameShort: "SBDI"
-#skin.layout: "sbdi"
+skin.layout: "sbdi"
 skin.homeUrl: "https://tools.biodiversitydata.se"
 
 grails.controllers.upload.maxFileSize: 524288000
