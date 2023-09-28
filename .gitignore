@@ -12,5 +12,5 @@ out/
 .classpath
 /node_modules/
 /grails-app/assets/node_modules/
-/grails-app/assets/node_modules/
+/grails-app/assets/compile/spAppModules.js
 /package-lock.json
