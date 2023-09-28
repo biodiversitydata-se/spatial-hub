@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+
+  spatial-hub:
+    image: sbdi/spatial-hub-dev
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./sbdi/data/config/spatial-hub-config.yml:/data/spatial-hub/config/spatial-hub-config.yml
