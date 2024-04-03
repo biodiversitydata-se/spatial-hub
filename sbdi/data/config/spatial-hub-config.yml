@@ -22,12 +22,15 @@ security:
     loginUrl: "https://auth.biodiversitydata.se/cas/login"
     logoutUrl: "https://auth.biodiversitydata.se/cas/logout"
     contextPath: ""
-    enabled: true
+    enabled: false
     bypass: false
     disableCAS: false
     gateway: false
   oidc:
-    enabled: false
+    enabled: true
+    clientId: replace_with_real_value
+    secret: replace_with_real_value
+    discoveryUri: https://auth.biodiversitydata.se/cas/oidc/.well-known
   jwt:
     enabled: false
 
@@ -64,6 +67,7 @@ favicon:
 
 layersService:
   url: "https://spatial.biodiversitydata.se/ws"
+  #url: "http://localhost:8081/ws"
 
 lists:
   url: "https://lists.biodiversitydata.se"
@@ -104,9 +108,11 @@ biocacheService:
 
 sampling:
   url: "https://spatial.biodiversitydata.se/ws"
+  #url: "http://localhost:8081/ws"
 
 geoserver:
   url: "https://spatial.biodiversitydata.se/geoserver"
+  #url: "http://localhost:8079/geoserver"
 
 flickr:
   url: "https://api.flickr.com/services/rest/?method="
