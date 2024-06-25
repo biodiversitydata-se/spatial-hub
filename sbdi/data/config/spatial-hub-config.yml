@@ -1,4 +1,5 @@
-grails.serverURL: "http://localhost:8080"
+grails:
+  serverURL: "http://localhost:8080"
 grails.app.context:
 
 server.port: 8080
@@ -15,25 +16,64 @@ i18n:
   region: "default"
 
 security:
+  # CAS disabled
   cas:
+    enabled: false
     casServerName: "https://auth.biodiversitydata.se"
     casServerUrlPrefix: "https://auth.biodiversitydata.se/cas"
     appServerName: "http://localhost:8080"
     loginUrl: "https://auth.biodiversitydata.se/cas/login"
     logoutUrl: "https://auth.biodiversitydata.se/cas/logout"
     contextPath: ""
-    enabled: false
     bypass: false
     disableCAS: false
     gateway: false
+  #Used for auth plugin
+  apikey:
+    check:
+      serviceUrl: "https://auth.biodiversitydata.se/apikey/ws/check?apikey={0}"
   oidc:
     enabled: true
+    discoveryUri: https://auth.biodiversitydata.se/cas/oidc/.well-known
     clientId: replace_with_real_value
     secret: replace_with_real_value
-    discoveryUri: https://auth.biodiversitydata.se/cas/oidc/.well-known
+    allowUnsignedIdTokens: true
+    scope: 'openid profile email ala/attrs ala/roles'
+    roleAttribute: ala:role
+    logoutAction:
+    alaUseridClaim: username
+    logoutUrl:
   jwt:
     enabled: false
+    #discoveryUri:
+    fallbackToLegacyBehaviour: true
+    #clientId:
+    #roleAttributes: cognito:groups
+    #rolesFromAccessToken: true
+    #userIdClaim: username
+    #roleClaims: cognito:groups
+  cors:
+    enable: true
+    authenticated:
+      allowedOrigins:
+        - '.*\.biodiversitydata\.se(:[0-9]+)?'
+    unauthenticated:
+      allowedOrigins:
+        - '*'
+      allowCredentials: false
+  core:
+    authCookieName: ALA-Auth
+  cookie:
+    enabled: false
+    domain: '.biodiversitydata.se'
 
+webservice:
+  jwt: false
+  #jwt-scopes: ala/attrs ala/internal users/read
+  #clientId:
+  #secret:
+
+apiKeyCheckUrlTemplate: "https://auth.biodiversitydata.se/apikey/ws/check?apikey={0}"
 autocompleteUrl: "https://species.biodiversitydata.se/ws/search/auto.jsonp"
 
 auth:
@@ -56,11 +96,10 @@ bieService:
     baseURL: "https://species.biodiversitydata.se/ws"
 
 userdetails:
-    baseUrl: "https://auth.biodiversitydata.se/userdetails"
-
-# ala-auth-plugin conf
-userDetails:
-    url: https://auth.biodiversitydata.se/userdetails
+  web:
+    url: "https://auth.biodiversitydata.se/userdetails/"
+  api:
+    url: "https://auth.biodiversitydata.se/userdetails/"
 
 favicon:
   url: "https://static.biodiversitydata.se/favicon.ico"
@@ -70,6 +109,7 @@ layersService:
   #url: "http://localhost:8081/ws"
 
 lists:
+  useListWs: false
   url: "https://lists.biodiversitydata.se"
   threatenedSpeciesUrl: '/ws/speciesList/?isThreatened=eq:true&isAuthoritative=eq:true'
   invasiveSpeciesUrl: '/ws/speciesList/?isInvasive=eq:true&isAuthoritative=eq:true'
@@ -151,10 +191,9 @@ speciesDotOpacity: 60
 logger:
   baseUrl: "https://logger.biodiversitydata.se/service"
 
+#TBC : decommisioned
 phylolink:
   url: ""
-
-apiKeyCheckUrlTemplate: "https://auth.biodiversitydata.se/apikey/ws/check?apikey={0}"
 
 biocollect:
   url: ""
@@ -175,44 +214,44 @@ startup:
   zoom: 5
   baselayer:
     default: osm
-  baselayers:
-    google_roadmaps:
-      name: 'Streets'
-      layerType: 'ROADMAP'
-      type: 'google'
-      exportType: 'normal'
-      link: 'https://www.google.com/intl/en_au/help/terms_maps.html'
-      projections: ['3857']
-    google_hybrid:
-      name: 'Hybrid'
-      layerType: 'HYBRID'
-      type: 'google'
-      exportType: 'hybrid'
-      link: 'https://www.google.com/intl/en_au/help/terms_maps.html'
-      projections: ['3857']
-    outline:
-      name: 'Outline'
-      type: 'wms'
-      url: "https://spatial.ala.org.au/geoserver/wms?"
-      layerParams:
-        layers: 'ALA:world'
-        format: 'image/png'
-        continuousWorld: true
-      exportType: 'outline'
-    osm:
-      name: 'Open Street Map'
-      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-      type: 'xyz'
-      exportType: 'minimal'
-      link: 'https://www.openstreetmap.org/about'
-      projections: ['3857']
-    google_satellite:
-      name: 'Satellite'
-      layerType: 'SATELLITE'
-      type: 'google'
-      exportType: 'satellite'
-      link: 'https://www.google.com/intl/en_au/help/terms_maps.html'
-      projections: ['3857']
+#  baselayers:
+#    google_roadmaps:
+#      name: 'Streets'
+#      layerType: 'ROADMAP'
+#      type: 'google'
+#      exportType: 'normal'
+#      link: 'https://www.google.com/intl/en_au/help/terms_maps.html'
+#      projections: ['3857']
+#    google_hybrid:
+#      name: 'Hybrid'
+#      layerType: 'HYBRID'
+#      type: 'google'
+#      exportType: 'hybrid'
+#      link: 'https://www.google.com/intl/en_au/help/terms_maps.html'
+#      projections: ['3857']
+#    outline:
+#      name: 'Outline'
+#      type: 'wms'
+#      url: "https://spatial.ala.org.au/geoserver/wms?"
+#      layerParams:
+#        layers: 'ALA:world'
+#        format: 'image/png'
+#        continuousWorld: true
+#      exportType: 'outline'
+#    osm:
+#      name: 'Open Street Map'
+#      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+#      type: 'xyz'
+#      exportType: 'minimal'
+#      link: 'https://www.openstreetmap.org/about'
+#      projections: ['3857']
+#    google_satellite:
+#      name: 'Satellite'
+#      layerType: 'SATELLITE'
+#      type: 'google'
+#      exportType: 'satellite'
+#      link: 'https://www.google.com/intl/en_au/help/terms_maps.html'
+#      projections: ['3857']
 
 defaultareas:
   - name: 'World'
@@ -221,16 +260,16 @@ defaultareas:
     areaSqKm: 510000000
     bbox: [-180, -90, 180, 90]
 
-presetWMSServers:
-  - name: ""
-    url: ""
+#presetWMSServers:
+#  - name: ""
+#    url: ""
 
 allowProxy:
   server: ""
 
-getMapExamples:
-  - name: ""
-    url: ""
+#getMapExamples:
+#  - name: ""
+#    url: ""
 
 wms:
   intersect: true
