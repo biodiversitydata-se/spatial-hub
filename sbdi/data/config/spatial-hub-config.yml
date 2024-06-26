@@ -132,7 +132,7 @@ sandboxService:
 
 gazField:
 
-userObjectsField:
+userObjectsField: cl1083
 
 biocache:
   url: "https://records.biodiversitydata.se"
