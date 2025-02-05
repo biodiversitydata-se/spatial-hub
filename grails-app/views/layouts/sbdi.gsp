@@ -27,6 +27,27 @@
         <asset:stylesheet href="generic.css"/>
     </g:else>
     <link rel="stylesheet" href="${config.headerAndFooter.baseURL}/css/app.css?DIGEST">
+
+  <!-- Matomo -->
+  <script type="text/javascript">
+    if (window.location.hostname !== "localhost") {
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.biodiversitydata.se"]);
+      _paq.push(["setDomains", ["*.biodiversitydata.se"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//matomo.biodiversitydata.se/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '25']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
 </head>
 
 <body class="${pageProperty(name: 'body.class')}" id="${pageProperty(name: 'body.id')}"
