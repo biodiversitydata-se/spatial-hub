@@ -27,27 +27,30 @@
         <asset:stylesheet href="generic.css"/>
     </g:else>
     <link rel="stylesheet" href="${config.headerAndFooter.baseURL}/css/app.css?DIGEST">
-
-  <!-- Matomo -->
-  <script type="text/javascript">
+    <style>
+        #main { padding:0; }
+        html { font-size: 12px; }
+    </style>
+    <!-- Matomo -->
+    <script type="text/javascript">
     if (window.location.hostname !== "localhost") {
-      var _paq = window._paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-      _paq.push(["setCookieDomain", "*.biodiversitydata.se"]);
-      _paq.push(["setDomains", ["*.biodiversitydata.se"]]);
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="//matomo.biodiversitydata.se/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '25']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+        _paq.push(["setCookieDomain", "*.biodiversitydata.se"]);
+        _paq.push(["setDomains", ["*.biodiversitydata.se"]]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="//matomo.biodiversitydata.se/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '25']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
     }
-  </script>
-  <!-- End Matomo Code -->
+    </script>
+    <!-- End Matomo Code -->
 </head>
 
 <body class="${pageProperty(name: 'body.class')}" id="${pageProperty(name: 'body.id')}"
@@ -55,30 +58,14 @@
 
 <g:set var="fluidLayout" value="${pageProperty(name: 'meta.fluidLayout') ?: config.skin?.fluidLayout}"/>
 
-<!-- Banner -->
 <ala:systemMessage/>
-<g:if test="${config.skin.header}">
-    <hf:banner/>
-</g:if>
-<!-- End banner -->
-
 <!-- Container -->
 <div class="${fluidLayout ? 'container-fluid' : 'container'}" id="main">
     <g:layoutBody/>
 </div><!-- End container #main col -->
 
-<!-- Footer -->
-<g:if test="${config.skin.footer}">
-    <hf:footer/>
-</g:if>
-<!-- End footer -->
-
 <!-- JS resources -->
-<script src="${config.headerAndFooter.baseURL}/js/vendor.js?DIGEST"></script>
-<script src="${config.headerAndFooter.baseURL}/js/app.js?DIGEST"></script>
-<script>require('js/init');</script>
 <asset:deferredScripts />
-<asset:javascript src="commonui-bs3-2019/js/application.min.js"/>
 <asset:javascript src="commonui-bs3-2019.js"/>
 </body>
 </html>
