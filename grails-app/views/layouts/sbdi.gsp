@@ -31,6 +31,11 @@
         #main { padding:0; }
         html { font-size: 12px; }
         .nav-menu-desktop { font-size: 1.2em; }
+        .customify-container { max-width: none; }
+        #top-logo {
+            height: 50px;
+            padding: 7px 0;
+        }
     </style>
     <!-- Matomo -->
     <script type="text/javascript">
@@ -65,7 +70,15 @@
     <div class="header--row-inner header-bottom-inner">
       <div class="customify-container">
         <div class="customify-grid cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle">
-          <div class="customify-col-12_md-12_sm-12 builder-item builder-first--primary-menu" data-push-left="">
+          <div>
+            <a href="${config.ala.baseURL}">
+              <asset:image id="top-logo" src="SBDI-utan-text-vit.svg" title="Swedish Biodiversity Data Infrastructure" />
+            </a>
+          </div>
+          <div style="color: white; padding-left: 20px; font-size: 1.4rem; align-self: flex-end;">
+            Swedish Biodiversity Data Infrastructure
+          </div>
+          <div class="builder-item builder-first--primary-menu" data-push-left="" style="margin-left: auto;">
             <div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary"
               data-item-id="primary-menu">
               <nav id="site-navigation-bottom-desktop"
