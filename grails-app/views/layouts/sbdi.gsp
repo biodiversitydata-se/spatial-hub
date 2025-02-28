@@ -25,29 +25,6 @@
         <!-- Hub is null wheres the style sheet-->
         <asset:stylesheet href="generic.css"/>
     </g:else>
-    <style>
-        #main { padding:0; }
-        html { font-size: 12px; }
-        .nav-menu-desktop { font-size: 1.2em; }
-        .customify-container { max-width: none; }
-        #top-logo {
-            height: 50px;
-            padding: 7px 0;
-        }
-        #auth-header-buttons {
-            margin-bottom: 0;
-        }
-        #auth-header-buttons a {
-            font-size: 1.17rem;
-        }
-        #auth-header-buttons a:hover {
-            background-color: var(--primary-sbdi-lightblue) !important;
-        }
-        .nav-menu-desktop .menu > li > a {
-            padding: 19px 13px;
-            font-size: 0.8em;
-        }
-    </style>
     <!-- Matomo -->
     <script type="text/javascript">
     if (window.location.hostname !== "localhost") {
@@ -82,16 +59,16 @@
       <div class="customify-container">
         <div class="customify-grid cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle">
 
-          <div>
+          <div id="top-logo">
             <a href="${config.ala.baseURL}">
-              <asset:image id="top-logo" src="SBDI-utan-text-vit.svg" title="Swedish Biodiversity Data Infrastructure" />
+              <asset:image src="SBDI-utan-text-vit.svg" title="Swedish Biodiversity Data Infrastructure" />
             </a>
           </div>
-          <div style="color: white; padding: 0 0 2px 15px; font-size: 1.4rem; align-self: flex-end;">
+          <div id="top-banner">
             Swedish Biodiversity Data Infrastructure
           </div>
 
-          <div class="builder-item builder-first--primary-menu" data-push-left="" style="margin-left: auto;">
+          <div id="top-menu" class="builder-item builder-first--primary-menu" data-push-left="">
             <div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary"
               data-item-id="primary-menu">
               <nav id="site-navigation-bottom-desktop"

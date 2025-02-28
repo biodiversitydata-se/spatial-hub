@@ -20,3 +20,46 @@
 *= require jquery-layout/jquery.layout.css
 *= require spatial-hub.css
 */
+
+html {
+    font-size: 12px;
+}
+#main {
+    padding:0;
+}
+
+.customify-container {
+    max-width: none;
+}
+
+#top-logo img {
+    height: 50px;
+    padding: 7px 0;
+}
+#top-banner {
+    align-self: flex-end;
+    padding: 0 0 2px 15px;
+    color: white;
+    font-size: 1.4rem;
+}
+
+#top-menu {
+    margin-left: auto;
+}
+.nav-menu-desktop {
+    font-size: 1.2em;
+}
+.nav-menu-desktop .menu > li > a {
+    padding: 19px 13px;
+    font-size: 0.8em;
+}
+
+#auth-header-buttons {
+    margin-bottom: 0;
+}
+#auth-header-buttons a {
+    font-size: 1.17rem;
+}
+#auth-header-buttons a:hover {
+    background-color: var(--primary-sbdi-lightblue) !important;
+}
