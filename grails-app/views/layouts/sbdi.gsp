@@ -6,17 +6,16 @@
     </g:if>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="app.version" content="${g.meta(name: 'app.version')}"/>
-    <meta name="app.build" content="${g.meta(name: 'app.build')}"/>
+    <meta name="app.version" content="${g.meta(name: 'info.app.version')}"/>
+    <meta name="app.build" content="${g.meta(name: 'info.app.build')}"/>
     <meta name="description" content="${config.skin?.orgNameLong ?: 'Atlas of Living Australia'}"/>
     <meta name="author" content="${config.skin?.orgNameLong ?: 'Atlas of Living Australia'}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
     <link href="${config.favicon.url}" rel="shortcut icon" type="image/x-icon"/>
+    <link href="${config.headerAndFooter.baseURL}/css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
     <title><g:layoutTitle/></title>
     <g:layoutHead/>
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
     <asset:stylesheet href="application-sbdi.css" />
     <g:if test="${hub}">
         <!-- Hub is not null-->
@@ -26,7 +25,6 @@
         <!-- Hub is null wheres the style sheet-->
         <asset:stylesheet href="generic.css"/>
     </g:else>
-    <link rel="stylesheet" href="${config.headerAndFooter.baseURL}/css/app.css?DIGEST">
     <style>
         #main { padding:0; }
         html { font-size: 12px; }
@@ -47,6 +45,7 @@
         }
         .nav-menu-desktop .menu > li > a {
             padding: 19px 13px;
+            font-size: 0.8em;
         }
     </style>
     <!-- Matomo -->
@@ -88,7 +87,7 @@
               <asset:image id="top-logo" src="SBDI-utan-text-vit.svg" title="Swedish Biodiversity Data Infrastructure" />
             </a>
           </div>
-          <div style="color: white; padding-left: 20px; font-size: 1.4rem; align-self: flex-end;">
+          <div style="color: white; padding: 0 0 2px 15px; font-size: 1.4rem; align-self: flex-end;">
             Swedish Biodiversity Data Infrastructure
           </div>
 
@@ -306,8 +305,9 @@
     <g:layoutBody/>
 </div><!-- End container #main col -->
 
-<!-- JS resources -->
+<!-- JS resources-->
 <asset:deferredScripts />
 <asset:javascript src="commonui-bs3-2019.js"/>
+
 </body>
 </html>
