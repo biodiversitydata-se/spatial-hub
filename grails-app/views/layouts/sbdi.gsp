@@ -45,6 +45,9 @@
         #auth-header-buttons a:hover {
             background-color: var(--primary-sbdi-lightblue) !important;
         }
+        .nav-menu-desktop .menu > li > a {
+            padding: 19px 13px;
+        }
     </style>
     <!-- Matomo -->
     <script type="text/javascript">
