@@ -36,6 +36,15 @@
             height: 50px;
             padding: 7px 0;
         }
+        #auth-header-buttons {
+            margin-bottom: 0;
+        }
+        #auth-header-buttons a {
+            font-size: 1.17rem;
+        }
+        #auth-header-buttons a:hover {
+            background-color: var(--primary-sbdi-lightblue) !important;
+        }
     </style>
     <!-- Matomo -->
     <script type="text/javascript">
@@ -70,6 +79,7 @@
     <div class="header--row-inner header-bottom-inner">
       <div class="customify-container">
         <div class="customify-grid cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle">
+
           <div>
             <a href="${config.ala.baseURL}">
               <asset:image id="top-logo" src="SBDI-utan-text-vit.svg" title="Swedish Biodiversity Data Infrastructure" />
@@ -78,6 +88,7 @@
           <div style="color: white; padding-left: 20px; font-size: 1.4rem; align-self: flex-end;">
             Swedish Biodiversity Data Infrastructure
           </div>
+
           <div class="builder-item builder-first--primary-menu" data-push-left="" style="margin-left: auto;">
             <div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary"
               data-item-id="primary-menu">
@@ -259,6 +270,26 @@
               </nav>
             </div>
           </div>
+
+          <div id="auth-header-buttons"
+            class="item--inner builder-item--button hide-on-mobile hide-on-tablet"
+            data-section="header_button" data-item-id="button">
+              <g:if test="${request.userPrincipal}">
+                <a data-i18n="nav.myprofile" style="margin-left:0.2rem;" class=" myProfileBtn item--button
+                  customify-btn customify-builder-btn is-icon-before" rel="noopener"
+                  href="${config.userdetails.web.url}myprofile/">My profile</a>
+                <a data-i18n="nav.logout" style="margin-left:0.2rem;" class=" logoutBtn item--button customify-btn
+                  customify-builder-btn is-icon-before" rel="noopener" href="/logout?">Logout</a>
+              </g:if>
+              <g:else>
+                <a data-i18n="nav.login" style="margin-left:0.2rem;" class=" loginBtn item--button customify-btn
+                  customify-builder-btn is-icon-before" rel="noopener" href="/login?path=${request.getRequestURL()}">Login</a>
+                <a data-i18n="nav.create-account" style="margin-left:0.2rem;" class=" signUpBtn item--button
+                  customify-btn customify-builder-btn is-icon-before" rel="noopener"
+                  href="${config.userdetails.web.url}registration/createAccount">Sign up</a>
+              </g:else>
+          </div>
+
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 function adjustMapHeight() {
     var headerHeight = 0;
-    var navbar = $('.site-navigation')[0];
+    var navbar = $('#wrapper-navbar')[0];
     if (navbar) {
         headerHeight = getComputedStyle(navbar).height.replace("px", "").replace("auto", "0");
     }
