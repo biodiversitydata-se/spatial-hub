@@ -2,7 +2,10 @@ FROM tomcat:9.0-jdk11-temurin
 
 ENV TZ=Europe/Stockholm
 
-RUN mkdir -p /data/spatial-hub/config
+RUN mkdir -p /data/spatial-hub/config \
+  /data/spatial-hub/i18n \
+  /data/spatial-hub/sessions \
+  /data/ala/runtime/files
 
 COPY sbdi/data/config/menu-config.json /data/spatial-hub/config/menu-config.json
 COPY sbdi/data/config/view-config.json /data/spatial-hub/config/view-config.json
