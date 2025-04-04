@@ -693,6 +693,26 @@
                             });
                             measureControl.addTo(map);
 
+                            var exportControl = L.easyPrint({
+                                title: 'Export map',
+                                position: 'topleft',
+                                exportOnly: true,
+                                sizeModes: ['Current', 'A4Landscape', 'A4Portrait']
+                            }).addTo(map);
+
+                            map.on('baselayerchange', function(e) {
+                                if (e.name) {
+                                    // Google layers cannot be exported
+                                    if (['Streets', 'Hybrid', 'Satellite'].includes(e.name)) {
+                                        if (exportControl._map) {
+                                            map.removeControl(exportControl);
+                                        }
+                                    } else if (!exportControl._map) {
+                                        map.addControl(exportControl);
+                                    }
+                                }
+                            })
+
                             map.on('draw:created', function (e) {
                                 var layer = e.layer;
                                 $scope.deleteDrawing(layer);
