@@ -495,6 +495,8 @@ spApp:
     cursorCoordinates: true
     # show map control that displays the quicklinks
     quicklinks: true
+    # show icon in toolbar for exporting map
+    exportMap: true
     # show "map options" button "Add WMS Layer"
     optionsAddWms: true
     # show "map options" button "Download Map"
