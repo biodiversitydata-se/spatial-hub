@@ -170,6 +170,7 @@ class BootStrap {
             spApp.collapseLeft = spApp.collapseLeft.toBoolean()
             spApp.cursorCoordinates = spApp.cursorCoordinates.toBoolean()
             spApp.quicklinks = spApp.quicklinks.toBoolean()
+            spApp.exportMap = spApp.exportMap.toBoolean()
             spApp.optionsAddWms = spApp.optionsAddWms.toBoolean()
             spApp.optionsDownloadMap = spApp.optionsDownloadMap.toBoolean()
             spApp.optionsResetMap = spApp.optionsResetMap.toBoolean()

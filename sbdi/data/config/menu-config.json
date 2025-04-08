@@ -79,10 +79,7 @@
   {
     "name": "Export",
     "width": 77,
-    "items": [{
-      "name": "Map",
-      "open": "exportMap"
-    },
+    "items": [
       {
         "name": "Area Checklist",
         "open": "ToolExportChecklistService"

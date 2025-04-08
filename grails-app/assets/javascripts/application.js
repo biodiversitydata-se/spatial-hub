@@ -22,6 +22,7 @@
 //= require leaflet-geodesy/leaflet-geodesy.js
 //= require Leaflet.zoomslider-0.7.1/src/L.Control.Zoomslider.js
 //= require leaflet-measure/dist/leaflet-measure.min.js
+//= require leaflet-easyprint/dist/bundle.js
 
 //angular
 //= require angular/angular.min.js

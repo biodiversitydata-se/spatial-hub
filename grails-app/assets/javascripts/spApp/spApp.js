@@ -28,6 +28,7 @@ if ($SH.config.collapseUp === undefined) $SH.config.collapseUp = true;
 if ($SH.config.collapseLeft === undefined) $SH.config.collapseLeft = true;
 if ($SH.config.cursorCoordinates === undefined) $SH.config.cursorCoordinates = true;
 if ($SH.config.quicklinks === undefined) $SH.config.quicklinks = true;
+if ($SH.config.exportMap === undefined) $SH.config.exportMap = true;
 if ($SH.config.optionsAddWms === undefined) $SH.config.optionsAddWms = true;
 if ($SH.config.optionsDownloadMap === undefined) $SH.config.optionsDownloadMap = true;
 if ($SH.config.optionsResetMap === undefined) $SH.config.optionsResetMap = true;
