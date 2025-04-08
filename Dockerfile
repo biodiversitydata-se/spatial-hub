@@ -12,7 +12,7 @@ COPY sbdi/data/config/view-config.json /data/spatial-hub/config/view-config.json
 
 COPY build/libs/spatial-hub-*-plain.war $CATALINA_HOME/webapps/ROOT.war
 
-ENV DOCKERIZE_VERSION v0.9.2
+ENV DOCKERIZE_VERSION=v0.9.3
 
 RUN apt-get update \
     && apt-get install -y wget \
