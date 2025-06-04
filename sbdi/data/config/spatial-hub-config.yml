@@ -95,6 +95,9 @@ bie.searchPath: '/search'
 bieService:
     baseURL: "https://species.biodiversitydata.se/ws"
 
+namematching:
+  baseURL: "https://namematching.biodiversitydata.se"
+
 userdetails:
   web:
     url: "https://auth.biodiversitydata.se/userdetails/"
