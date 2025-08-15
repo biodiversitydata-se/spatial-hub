@@ -69,6 +69,7 @@ security:
 
 webservice:
   jwt: false
+  apiKey: "replace_with_real_value"
   #jwt-scopes: ala/attrs ala/internal users/read
   #clientId:
   #secret:
