@@ -18,7 +18,7 @@ class LogController {
         String url = "${grailsApplication.config.layersService.url}/log"
 
         Map map = [data: (request.JSON as Map)]
-        def r = webService.post(url, map, null, ContentType.APPLICATION_JSON, false, true)
+        def r = webService.post(url, map, null, ContentType.APPLICATION_JSON, true, true)
 
         render status: r.statusCode
     }
@@ -27,7 +27,7 @@ class LogController {
         String url = "${grailsApplication.config.layersService.url}/log/search"
 
         Map inputs = params as Map
-        def r = webService.get(url, inputs, ContentType.APPLICATION_JSON, false, true)
+        def r = webService.get(url, inputs, ContentType.APPLICATION_JSON, true, true)
 
         response.status = r.statusCode
         render r.resp as JSON
