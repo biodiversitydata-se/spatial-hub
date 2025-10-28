@@ -81,19 +81,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="https://tools.biodiversitydata.se">SBDI tools</a>
+                        <a href="https://biodiversitydata.se/explore-data/">SBDI tools</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="https://docs.biodiversitydata.se/">Browse our help pages</a></li>
                             <li><a href="https://docs.biodiversitydata.se/support">Contact us / Support</a></li>
-                            <!--
-                            <li><a href="https://new.biodiversitydata.se/explore-data/programming/">Programming and API:s</a></li>
-                            -->
+                            <li><a href="https://biodiversitydata.se/explore-data/programming/">Programming and API:s</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="https://docs.biodiversitydata.se/sbdi-data/citation-guide/">How to site SBDI and data used</a></li>
-                            <li><a href="https://docs.biodiversitydata.se/publish-and-share-data/">Share your data</a></li>
+                            <li><a href="https://biodiversitydata.se/share-data/">Share your data</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
